@@ -6,7 +6,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
-        //Arrays
+        //Lista
         List <String> listaNomes = new ArrayList<String>();
         listaNomes.add("Thales");
         listaNomes.add("Ana");
@@ -18,7 +18,7 @@ public class Main {
         List<Double> listaDouble = new ArrayList<Double>();
 
         for (int i = 0; i < 6; i++) {
-            listaDouble.add(new Random().nextDouble()*100);
+            listaDouble.add(new Random().nextDouble()*10000);
         }
 
         Funcionario garçom = new Garçom(listaNomes.get(0), listaDouble.get(0));
@@ -42,5 +42,24 @@ public class Main {
         for (Double double1 : listaDouble) {
             System.out.println("Salário: R$" + double1);
         }
+
+        System.out.println("\n");
+
+        List <Funcionario> listaFuncionarios = new ArrayList();
+        listaFuncionarios.add(garçom);
+        listaFuncionarios.add(garçom2);
+        listaFuncionarios.add(faxineiro);
+        listaFuncionarios.add(faxineiro2);
+        listaFuncionarios.add(chef);
+        listaFuncionarios.add(chef2);
+
+        for (Funcionario funcionarios : listaFuncionarios){
+            System.out.println("-------------------------");
+            System.out.println("Dados do funcionário: \n");
+            System.out.println("Nome: " + funcionarios.nome);
+            System.out.println("Salário: " + funcionarios.salario);
+            System.out.println("\n");
+        }
+
     }
 }
